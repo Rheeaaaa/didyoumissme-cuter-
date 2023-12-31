@@ -80,7 +80,7 @@
         <div class="btn">
         <button onclick="handleYes()">Yes</button>
         <button onclick="handleNo()">No</button>
-        <p id="response">(CHOOSE WISELY).</p>
+        <p id="response">be honest.</p>
     </div> 
     </div>
 
@@ -88,14 +88,14 @@
         function handleYes() {
             document.getElementById('response').innerText = 'mwah mwah';
             document.getElementById('mainImage').src = "https://media2.giphy.com/media/ZQRhHJzgcJk2lcydLS/200.webp?cid=ecf05e4798bad610605732b4ef00363ea3972e19654adb41&ep=v1_user_favorites&rid=200.webp&ct=g" ;
-            document.querySelector('h1').innerText = 'i knew it!'; 
+            document.querySelector('h1').innerText = 'I knew it!!!'; 
             hideOptions();
         }
 
         function handleNo() {
             document.getElementById('response').innerText = 'are you sure :( think again  ';
             document.getElementById('mainImage').src = "https://media1.giphy.com/media/soTerWGY4w1XvOlZPB/200.webp?cid=ecf05e4798bad610605732b4ef00363ea3972e19654adb41&ep=v1_user_favorites&rid=200.webp&ct=g" ;
-            document.querySelector('h1').innerText = 'DID YOU MISS ME!'; 
+            document.querySelector('h1').innerText = 'DID YOU MISS ME!!!'; 
             hideOptions();
 
             // Set a timeout to reset the page after 3 seconds
