@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage</title>
+    <style>
+        body {
+            text-align: center;
+            margin: 50px;
+        }
+
+        #content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid pink ;
+            border-radius: 5px;
+        }
+
+        .response-images {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        button {
+        margin: 10px;
+        padding: 10px;
+        font-size: 16px;
+        width: 150px;
+        cursor: pointer;
+        background-color: pink; /* Set the button color */
+        color: white;
+        border: none;
+    }
+        
+
+        #response {
+            margin-top: 20px;
+        }
+
+        @media (max-width: 600px) {
+            /* Adjust styles for smaller screens */
+            button {
+                width: 100%; /* Make buttons full width on small screens */
+            }
+        }
+
+        .h1{
+            font-family: 'Nunito';
+            font-weight: bold;
+            color: palevioletred;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 0px;
+         }
+
+         #response{
+            font-family: 'Nunito';
+            font-weight: bold;
+            color: palevioletred;
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 0px;
+         }
+        
+
+        
+    </style>
+</head>
+<body>
+
+    <div id="content">
+        <div class="h1"><h1>Did you miss me..?
+        </h1></div>
+        <img id="mainImage" class="response-images" src="https://media2.giphy.com/media/tNxBaAZsK4IuT28V1k/200.webp?cid=ecf05e47gblbn62egq7fwqxx2pmjea8flisg87jdlndxvr6e&ep=v1_gifs_related&rid=200.webp&ct=g" alt="Cute animated illustration">
+        <div class="btn">
+        <button onclick="handleYes()">Yes</button>
+        <button onclick="handleNo()">No</button>
+        <p id="response">(CHOOSE WISELY).</p>
+    </div> 
+    </div>
+
+    <script>
+        function handleYes() {
+            document.getElementById('response').innerText = 'mwah mwah';
+            document.getElementById('mainImage').src = "https://media2.giphy.com/media/ZQRhHJzgcJk2lcydLS/200.webp?cid=ecf05e4798bad610605732b4ef00363ea3972e19654adb41&ep=v1_user_favorites&rid=200.webp&ct=g" ;
+            document.querySelector('h1').innerText = 'i knew it!'; 
+            hideOptions();
+        }
+
+        function handleNo() {
+            document.getElementById('response').innerText = 'are you sure :( think again  ';
+            document.getElementById('mainImage').src = "https://media1.giphy.com/media/soTerWGY4w1XvOlZPB/200.webp?cid=ecf05e4798bad610605732b4ef00363ea3972e19654adb41&ep=v1_user_favorites&rid=200.webp&ct=g" ;
+            document.querySelector('h1').innerText = 'DID YOU MISS ME!'; 
+            hideOptions();
+
+            // Set a timeout to reset the page after 3 seconds
+            setTimeout(function() {
+                resetPage();
+            }, 3000);
+        }
+
+        function hideOptions() {
+            // Hide the options (Yes and No buttons)
+            document.querySelectorAll('#content button').forEach(button => {
+                button.style.display = 'none';
+            });
+        }
+
+        function resetPage() {
+            // Reset the content to the original state
+            document.getElementById('response').innerText = 'Choose an option above.';
+            document.getElementById('mainImage').src = "https://media2.giphy.com/media/tNxBaAZsK4IuT28V1k/200.webp?cid=ecf05e47gblbn62egq7fwqxx2pmjea8flisg87jdlndxvr6e&ep=v1_gifs_related&rid=200.webp&ct=g" ;
+            document.getElementById('mainImage').alt ='Main Image';
+
+
+            // Show the options (Yes and No buttons)
+            document.querySelectorAll('#content button').forEach(button => {
+                button.style.display = 'block';
+            });
+        }
+    </script>
+
+</body>
+</html>
